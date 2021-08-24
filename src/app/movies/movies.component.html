@@ -1,0 +1,32 @@
+<div class="jumbotron">
+  <h1 class="display-4">Hello, Watchers!</h1>
+  <p class="lead">Watch movie with your own preferences, pay as you go, monthly, or become loyalers!.</p>
+  <hr class="my-4">
+  <p>Nitflix provides thousands of movie for you! Easily subscribe or rent!.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Subscribe Now</a>
+  </p>
+</div>
+<h1>List Movies</h1>
+<button routerLink="/add" class="btn"> Add New Movie </button>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Movie Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let movie of resData">
+    <tr>
+      <th scope="row">{{movie.id}}</th>
+      <td>{{movie.name}}</td>
+      <td>
+        <button class="btn" (click)="onDelete(movie.id)" >Delete</button>
+        <button routerLink="/detail/{{movie.id}}" class="btn"> Details </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
