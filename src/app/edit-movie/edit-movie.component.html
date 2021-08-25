@@ -6,11 +6,14 @@
  <p>You can edit the details and title below:</p>
 </div>
 
-<form class="form-group" #values="ngForm" action="">
+<form class="form-group" action="">
   <input type="text" [(ngModel)]="modelEdit.name" name="name" id="name" class="form-control" >
   <br>
   <textarea  [(ngModel)]="modelEdit.details" name="details" id="" cols="30" rows="10" class="form-control"></textarea>
   <br>
   <input type="submit" (click)="editMovie()"  class="form-control">
+  <br>
+
+
 </form>
 

@@ -1,0 +1,32 @@
+<h1>Become Member</h1>
+<form class="form-group" #values="ngForm" action="">
+  <label for="name">Full Name</label>
+  <input type="text" [(ngModel)]="model.name"  name="name" placeholder="e.g : John Appleseed" id="name" class="form-control" >
+  <br>
+  <label for="dateOfBirth" >Date of Birth</label>
+  <input type="date" [(ngModel)]="model.dateOfBirth"  name="dateOfBirth" placeholder="Date of Birth" id="dateOfBirth" class="form-control" >
+  <br>
+  <div class="dropdown">
+    <button  class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      {{option}}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngFor="let item of memberList">
+
+      <ul style="list-style:none" *ngFor="let item of memberList, let index = index">
+        <li
+         style="color:black ; cursor : pointer"
+          (click)="chooseMember(index)">
+           {{item.membershipTypeName}} /Rp.{{item.signUpFee}}</li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="form-check">
+    <input class="form-check-input" (click)="onClickCheck()" type="checkbox" value="" id="flexCheckDefault">
+    <label class="form-check-label"  for="flexCheckDefault">
+     Subscribe to Newsletter
+    </label>
+  </div>
+  <br>
+  <input (click)="onSubmit()" type="submit"  class="form-control">
+</form>

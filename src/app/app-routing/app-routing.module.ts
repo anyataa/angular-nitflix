@@ -4,13 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { MoviesComponent } from '../movies/movies.component';
 import { AddMovieComponent } from '../add-movie/add-movie.component';
 import { EditMovieComponent } from '../edit-movie/edit-movie.component';
+import { AddCustomerComponent } from '../add-customer/add-customer.component';
 
 
 
 const routes : Routes = [
   { path : 'add' , component: AddMovieComponent},
   { path : '' , component: MoviesComponent},
-  { path : 'detail/:id', component: EditMovieComponent }
+  { path : 'detail/:id', component: EditMovieComponent },
+  { path: 'becomeMember', component: AddCustomerComponent}
 ]
 
 @NgModule({

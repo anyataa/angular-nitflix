@@ -1,9 +1,9 @@
 <h1>Add New Movie</h1>
-<form #values="ngForm" class="form-group" action="">
+<form  class="form-group" action="">
   <input class="form-control"  type="text" [(ngModel)]="model.name" name="name" placeholder="Movie Title">
 
   <br>
-  <input [(ngModel)]="model.details" name="details"  class="form-control" type="text"  placeholder="Movie Detail">
+  <textarea [(ngModel)]="model.details" rows="10" name="details"  class="form-control" type="text"  placeholder="Movie Detail"></textarea>
   <br>
   <input class="form-control" type="submit" (click)="onSubmit()" placeholder="Add">
 </form>
