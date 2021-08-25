@@ -9,6 +9,7 @@
               <th>Date of Birth</th>
               <th>Subscribed to Newsletter</th>
               <th>Membership Type Id</th>
+              <th>More</th>
           </tr>
           </thead>
           <tbody>
@@ -17,6 +18,14 @@
               <td>{{ item.dateOfBirth }}</td>
               <td>{{ item.isSubscribedToNewsLetter }}</td>
               <td>{{ item.membershipTypeId }}</td>
+              <td>
+                <button
+                class="btn btn-danger"
+                 style="margin-right: 25px; margin-bottom: 10px;"
+                 (click)="onDelete(item.id)"
+                mat-button>Delete</button>
+                <button routerLink="/editCustomer" class="btn btn-info" style="margin-right: 25px;" mat-button>Detail</button>
+              </td>
           </tr>
           </tbody>
       </table>

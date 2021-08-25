@@ -35,9 +35,7 @@ export class AddCustomerComponent implements OnInit {
 
   getMembership() {
     this.membershiptService.getMembershipType().subscribe( (res) => {
-      console.log(res)
       this.memberList = res;
-      console.log(this.model)
     })
   }
 
@@ -49,7 +47,6 @@ export class AddCustomerComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.model)
     this.customerService.addCustomer(this.model).subscribe(
       (res) => {
         alert(`Successfully added `)
@@ -59,6 +56,5 @@ export class AddCustomerComponent implements OnInit {
 
   onClickCheck(){
     this.model.isSubscribedToNewsLetter = !this.model.isSubscribedToNewsLetter;
-    console.log(this.model.isSubscribedToNewsLetter)
   }
 }

@@ -22,6 +22,8 @@ export class EditMovieComponent implements OnInit {
     id : 0
   }
   showEdit : boolean = false;
+  divEdit = "none"
+  labelEdit = "Click to Edit"
   constructor(private route : ActivatedRoute, private http : HttpClient) { }
 
   ngOnInit(): void {
@@ -47,7 +49,7 @@ export class EditMovieComponent implements OnInit {
   editMovie() {
     this.http.put<any>((this.URL + `/${this.id}`), this.modelEdit).subscribe(
       (res : any) => {
-        alert(`Movie changed Successfully`)
+        alert(`${res.name} changed Successfully`)
         this.getMovie()
 
       }
@@ -55,8 +57,13 @@ export class EditMovieComponent implements OnInit {
   }
 
   onEdit() {
+    this.showEdit = !this.showEdit
     if(this.showEdit) {
-
+      this.divEdit=""
+      this.labelEdit = "Click to Close"
+    } else {
+      this.divEdit="none"
+      this.labelEdit = "Click to Edit"
     }
   }
 

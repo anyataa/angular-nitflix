@@ -18,4 +18,8 @@ export class CustomerService {
    addCustomer(customerModel : any) {
     return this.http.post(this.URL, customerModel)
    }
+
+   deleteCustomer(id : number) {
+     return this.http.delete(this.URL + `/${id}`)
+   }
 }

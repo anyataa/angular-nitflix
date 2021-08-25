@@ -12,6 +12,7 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { DatePipe } from '@angular/common';
 import { CustomerComponent } from './customer/customer.component';
 import { DataTablesModule } from 'angular-datatables';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DataTablesModule } from 'angular-datatables';
     NavbarComponent,
     EditMovieComponent,
     AddCustomerComponent,
-    CustomerComponent
+    CustomerComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule,

@@ -3,17 +3,19 @@
   <h1>{{model.name}}</h1>
   <h3>{{model.details}}</h3>
  <br>
- <p>You can edit the details and title below:</p>
+ <button (click)="onEdit()" class="btn btn-success" mat-button>{{labelEdit}} </button>
+<br><br><br>
+</div>
+<div [ngStyle]="{'display': divEdit}">
+  <p>You can edit the details and title below:</p>
+  <form  class="form-group" action="">
+    <input type="text" [(ngModel)]="modelEdit.name" name="name" id="name" class="form-control" >
+    <br>
+    <textarea  [(ngModel)]="modelEdit.details" name="details" id="" cols="30" rows="10" class="form-control"></textarea>
+    <br>
+    <input type="submit" (click)="editMovie()"  class="form-control">
+    <br>
+  </form>
 </div>
 
-<form class="form-group" action="">
-  <input type="text" [(ngModel)]="modelEdit.name" name="name" id="name" class="form-control" >
-  <br>
-  <textarea  [(ngModel)]="modelEdit.details" name="details" id="" cols="30" rows="10" class="form-control"></textarea>
-  <br>
-  <input type="submit" (click)="editMovie()"  class="form-control">
-  <br>
-
-
-</form>
 

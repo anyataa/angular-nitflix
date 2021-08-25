@@ -6,6 +6,7 @@ import { AddMovieComponent } from '../add-movie/add-movie.component';
 import { EditMovieComponent } from '../edit-movie/edit-movie.component';
 import { AddCustomerComponent } from '../add-customer/add-customer.component';
 import { CustomerComponent } from '../customer/customer.component';
+import { EditCustomerComponent } from '../edit-customer/edit-customer.component';
 
 
 
@@ -14,7 +15,8 @@ const routes : Routes = [
   { path : '' , component: MoviesComponent},
   { path : 'detail/:id', component: EditMovieComponent },
   { path: 'becomeMember', component: AddCustomerComponent},
-  { path : 'allMember', component: CustomerComponent }
+  { path : 'allMember', component: CustomerComponent },
+  { path : 'editCustomer', component : EditCustomerComponent}
 ]
 
 @NgModule({

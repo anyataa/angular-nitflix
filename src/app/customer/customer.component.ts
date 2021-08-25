@@ -26,9 +26,19 @@ export class CustomerComponent implements OnInit {
   getCustomer() {
     this.customerService.getCustomer().subscribe(res => {
       this.customerList = res;
-      console.log(res)
       this.dtTrigger.next()
     })
   }
 
+  onDelete(id : number){
+    if(confirm("Are you sure you want to delete?")) {
+      this.customerService.deleteCustomer(id)
+      .subscribe(res => {
+        this.customerService.getCustomer()
+        .subscribe( res => {
+         window.location.reload()
+        })
+      })
+    }
+  }
 }
