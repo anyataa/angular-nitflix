@@ -12,12 +12,16 @@ import { MembershipTypeService } from '../services/membership-type/membership-ty
 })
 export class AddCustomerComponent implements OnInit {
   memberList : any = [];
-  option : string = "Membership Type Options"
+  option = {
+    name : "Membership Type Options",
+    id : 0
+  }
 
   model = {
     name: "",
     dateOfBirth  : "",
-    isSubscribedToNewsLetter :  false
+    isSubscribedToNewsLetter :  false,
+    MembershipTypeId : 0
   }
   constructor(
     private membershiptService : MembershipTypeService
@@ -38,8 +42,9 @@ export class AddCustomerComponent implements OnInit {
   }
 
   chooseMember(index : number) {
-
-    this.option = this.memberList[index].membershipTypeName
+    this.option.name = this.memberList[index].membershipTypeName
+    this.option.id = this.memberList[index].id
+    this.model.MembershipTypeId = this.memberList[index].id
 
   }
 

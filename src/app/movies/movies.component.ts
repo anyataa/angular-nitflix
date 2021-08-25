@@ -12,7 +12,7 @@ import { Subject } from 'rxjs';
 })
 export class MoviesComponent implements OnInit {
 
-  dtConfig : DataTables.Settings = { lengthMenu : [1,5, 10, 25,50]}
+  dtConfig : DataTables.Settings = { lengthMenu : [5, 10, 25,50]}
   dtTrigger : Subject<any> = new Subject<any>();
   resData : any;
   constructor(private http: HttpClient) {

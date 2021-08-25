@@ -1,5 +1,24 @@
-<h1>Hall Of Member</h1>
+<h1>List Of Members</h1>
 
-<ul style="list-style: none;" *ngFor="let item of customerList">
-<li>{{item.name}}</li>
-</ul>
+<div class="card m-5 p-3">
+  <div class="card-body">
+      <table class="table table-bordered table-striped table-hover" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger">
+          <thead>
+          <tr>
+              <th>Name</th>
+              <th>Date of Birth</th>
+              <th>Subscribed to Newsletter</th>
+              <th>Membership Type Id</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let item of customerList">
+              <td>{{ item.name }}</td>
+              <td>{{ item.dateOfBirth }}</td>
+              <td>{{ item.isSubscribedToNewsLetter }}</td>
+              <td>{{ item.membershipTypeId }}</td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

@@ -46,9 +46,10 @@ export class EditMovieComponent implements OnInit {
 
   editMovie() {
     this.http.put<any>((this.URL + `/${this.id}`), this.modelEdit).subscribe(
-      res => {
-        console.log(res)
+      (res : any) => {
+        alert(`Movie changed Successfully`)
         this.getMovie()
+
       }
     )
   }

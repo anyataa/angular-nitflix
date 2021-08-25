@@ -8,7 +8,9 @@
   </p>
 </div>
 <h1>List Movies</h1>
-<button routerLink="/add" class="btn"> Add New Movie </button>
+<p class="lead">
+  <a class="btn btn-success btn-lg" routerLink="/add" role="button">Add New Movie</a>
+</p>
 <div class="card m-5 p-3">
   <div class="card-body">
     <table datatable [dtOptions]="dtConfig" [dtTrigger]="dtTrigger" class="table table-bordered table-striped table-hover">
