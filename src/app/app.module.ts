@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { EditMovieComponent } from './edit-movie/edit-movie.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
 import { DatePipe } from '@angular/common';
+import { CustomerComponent } from './customer/customer.component';
+import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import { DatePipe } from '@angular/common';
     AddMovieComponent,
     NavbarComponent,
     EditMovieComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [
     DatePipe

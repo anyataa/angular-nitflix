@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Movie } from 'src/models/Movie';
+import { DataTablesModule } from 'angular-datatables';
+import { Subject } from 'rxjs';
 
 
 @Component({
@@ -9,9 +11,10 @@ import { Movie } from 'src/models/Movie';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
+
+  dtConfig : DataTables.Settings = { lengthMenu : [1,5, 10, 25,50]}
+  dtTrigger : Subject<any> = new Subject<any>();
   resData : any;
-
-
   constructor(private http: HttpClient) {
 
   }
@@ -20,11 +23,16 @@ export class MoviesComponent implements OnInit {
     this.getMovie();
   }
 
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
+  }
+
   URL : string = "https://localhost:44353/api/Movies"
   getMovie() {
     this.http.get<any> ( this.URL).subscribe(
       res => {
         this.resData = res;
+        this.dtTrigger.next()
       }
     )
   }
@@ -35,13 +43,14 @@ export class MoviesComponent implements OnInit {
         console.log(res)
         if(!res){
           this.getMovie();
+
         }
       })
   }
 
   onDelete(id : number) {
     console.log(id)
-    if(confirm("Are You Sure Want to Delete Movie?")) {
+    if(confirm("Are You Sure Want to Delete the Movie?")) {
       this.deleteMovie(id)
     }
   }
