@@ -1,7 +1,8 @@
-export class Customer {
-  constructor(
-    public id : number,
-    public name : string,
-    public dateOfBirth : Date
-  ) {}
+export interface Customer {
+
+    id : number,
+    name : string,
+     dateOfBirth : Date,
+     membershipTypeId : number
+
 }

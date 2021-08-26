@@ -12,4 +12,8 @@ export class MembershipTypeService {
   getMembershipType() {
     return this.http.get(this.URL)
   }
+
+  getMembershipTypeSingle(id : number) {
+    return this.http.get(this.URL + `/${id}`)
+  }
 }
