@@ -26,4 +26,8 @@ export class CustomerService {
    getCustomerSingle(customerId : number) {
      return this.http.get(this.URL + `/${customerId}`)
    }
+
+   updateCustomer(customerId : number, customerModel : Customer) {
+     return this.http.put(this.URL+`/${customerId}`, customerModel)
+   }
 }

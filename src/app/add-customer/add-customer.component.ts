@@ -25,7 +25,7 @@ export class AddCustomerComponent implements OnInit {
   }
   constructor(
     private membershiptService : MembershipTypeService
-    , public datepipe: DatePipe,
+    , private datepipe: DatePipe,
     private customerService : CustomerService ) { }
 
   ngOnInit(): void {

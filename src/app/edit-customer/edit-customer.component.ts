@@ -18,7 +18,7 @@ export class EditCustomerComponent implements OnInit {
   showEdit = "none"
   id : number = 0;
   memberId : string = "";
-  customer : Customer = {id : 0, name : "", membershipTypeId : 0, dateOfBirth : new Date()}
+  customer : Customer = {id : 0, name : "", membershipTypeId : 0, dateOfBirth : ""}
   membership : MembershipType = { id : 0, membershipTypeName : "", signUpFee : 0, durationInMonths: 0, discountRate: 0}
 
   constructor(
@@ -51,8 +51,10 @@ export class EditCustomerComponent implements OnInit {
   getCustomerSingle() {
     this.customerService.getCustomerSingle(this.id)
     .subscribe((res : any) =>  {
+      this.customer.id = res.id
       this.customer.name = res.name
       this.customer.dateOfBirth = res.dateOfBirth
+      this.customer.membershipTypeId = res.membershipTypeId
     })
   }
 
@@ -67,6 +69,14 @@ export class EditCustomerComponent implements OnInit {
     }
   }
   onSubmit(){
-
+    this.customerService.updateCustomer( this.id ,this.customer)
+    .subscribe((res : any) => {
+      console.log(res)
+      if(res != null) {
+         alert(`${res.name} successfuly changed!`)
+      } else {
+        alert('something went wrong! please check your connection and try again.')
+      }
+    })
   }
 }
