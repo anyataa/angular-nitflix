@@ -1,6 +1,25 @@
 <h1>
-  Details
+ Customer Details
 </h1>
+<h2>
+  Name : {{customer.name}} <br> DOB : {{customer.dateOfBirth}}
+</h2>
 <h3>
-{{id}}
+  Membership Type:
+{{membership.membershipTypeName}}
 </h3>
+<p>Membership Duration : {{membership.durationInMonths}}</p>
+<p>Membership Sign Up Fee : {{membership.signUpFee}}</p>
+<p>Membership Discount Rate : {{membership.discountRate}}</p>
+
+<button (click)="changeEditMessage()" class="btn btn-info" mat-button>{{editMessage}}</button>
+<br> <br>
+<div style="display:{{showEdit}}">
+   <label for="name">Full Name</label>
+    <input class="form-control" type="text" [(ngModel)]="customer.name" id="name">
+    <br>
+    <label for="name">Date of Birth</label>
+    <input class="form-control" type="date" [(ngModel)]="customer.dateOfBirth" id="name">
+    <br>
+    <input class="form-control" type="submit" (click)="onSubmit()" name="" id="">
+</div>

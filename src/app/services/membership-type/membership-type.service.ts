@@ -13,7 +13,7 @@ export class MembershipTypeService {
     return this.http.get(this.URL)
   }
 
-  getMembershipTypeSingle(id : number) {
-    return this.http.get(this.URL + `/${id}`)
+  getMembershipTypeSingle(memberId : string) {
+    return this.http.get(this.URL + `/${memberId}`)
   }
 }

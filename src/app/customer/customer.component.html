@@ -24,7 +24,7 @@
                  style="margin-right: 25px; margin-bottom: 10px;"
                  (click)="onDelete(item.id)"
                 mat-button>Delete</button>
-                <button routerLink="/editCustomer/{{item.id}}" class="btn btn-info" style="margin-right: 25px;" mat-button>Detail</button>
+                <button routerLink="/editCustomer/{{item.id}}/{{item.membershipTypeId}}" class="btn btn-info" style="margin-right: 25px;" mat-button>Detail</button>
               </td>
           </tr>
           </tbody>

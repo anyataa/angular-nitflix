@@ -1,6 +1,9 @@
-export class MembershipType {
-  constructor(
-    public id : number,
-    public name : string
-  ) {}
+export interface MembershipType {
+
+   id : number,
+   membershipTypeName: string,
+   signUpFee: number,
+   durationInMonths: number,
+   discountRate: number
+
 }
